@@ -1,0 +1,41 @@
+.ui.segment.inverted(style="backgroundColor:rgba(0,0,0,1.0);")
+  h1.ui.header.inverted
+    i.icon.twitch
+    .content
+      span= username
+      - if(isOffline)
+        .sub.header OFFLINE
+      - else
+        .sub.header
+          | playing 
+          span= gameTitle
+          |  - 
+          span= time
+  .ui.form.large.equal.width.inverted
+    .three.fields
+      .field
+        label Current Viewers
+        if trend.currentViewerCount === true
+          .ui.label.blue.massive
+            i.icon.unhide
+            i.icon.arrow.up
+            span= currentViewerCount
+        else if trend.currentViewerCount === false
+          .ui.label.red.massive
+            i.icon.unhide
+            i.icon.arrow.down
+            span= currentViewerCount
+        else
+          .ui.label.teal.massive
+            i.icon.unhide
+            span= currentViewerCount
+      .field
+        label Total Views
+        .ui.label.teal.massive
+          i.icon.area.chart
+          span= totalViews
+      .field
+        label Followers
+        .ui.label.teal.massive
+          i.icon.users
+          span=  followerCount
