@@ -5,6 +5,7 @@ jade = require('react-jade')
 request = require 'superagent'
 moment = require 'moment'
 _ = require('lodash')
+CLIENT_ID = "qbz670hdhurhch1297howqv4mnix5n8"
 
 class App extends React.Component
   constructor: ->
@@ -50,6 +51,7 @@ class App extends React.Component
     request
     .get "https://api.twitch.tv/kraken/streams/#{@state.username}"
     .set 'Accept', 'application/vnd.twitchtv.v3+json'
+    .set 'Client-ID', CLIENT_ID
     .end (e,res)=>
       if e 
         clearInterval @apiTimer
