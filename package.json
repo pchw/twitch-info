@@ -1,30 +1,28 @@
 {
   "name": "twitch-info",
-  "version": "0.0.2",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "gulp compile",
-    "start": "gulp start"
-  },
-  "author": "",
-  "license": "MIT",
+  "version": "0.2.0",
+  "private": true,
   "dependencies": {
-    "electron-jade": "^1.2.2",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "coffee-react": "^4.0.0",
-    "lodash": "^3.10.1",
-    "react-jade": "^2.5.0",
-    "coffee-script": "^1.10.0",
-    "superagent": "^1.4.0",
-    "moment": "^2.10.6"
+    "axios": "^0.16.2",
+    "moment": "^2.18.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dev": "nf start",
+    "package": "electron-packager . twitchinfo --platform=darwin --arch=x64 --icon=./icon.icns && electron-packager . twitchinfo --platform=win32 --arch=x64"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-load-plugins": "^1.0.0",
-    "coffee-script": "^1.10.0",
-    "electron-connect": "^0.3.3"
-  }
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2",
+    "foreman": "^2.0.0"
+  },
+  "main": "electron-starter.js",
+  "homepage": "./"
 }
